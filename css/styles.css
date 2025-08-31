@@ -11,9 +11,45 @@
     --dark-color: #343a40;
 }
 
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #1a1a1a;
+    --bg-darker: #000000;
+    --bg-card: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 76px;
+}
+
+/* Dark Mode Base Styles */
+body.dark-mode {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Dark Mode Background Classes */
+.dark-mode .bg-dark {
+    background-color: var(--bg-secondary) !important;
+}
+
+.dark-mode .bg-darker {
+    background-color: var(--bg-darker) !important;
+}
+
+.dark-mode .bg-secondary {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+}
+
+.dark-mode .bg-black {
+    background-color: #000000 !important;
 }
 
 /* Navigation */
@@ -38,11 +74,14 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+.dark-mode .hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 .hero-image-container {
@@ -118,6 +157,12 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.dark-mode .partner-categories {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* Contact Items */
 .contact-item {
     padding: 1.5rem;
@@ -129,6 +174,15 @@ body {
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark-mode .contact-item {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.dark-mode .contact-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Buttons */
