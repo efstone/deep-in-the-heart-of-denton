@@ -195,6 +195,23 @@ body.dark-mode {
     line-height: 1.4;
 }
 
+/* Email contact item - hide email when it can't display fully */
+.contact-item-email {
+    cursor: pointer;
+}
+
+.contact-item-email .email-address {
+    white-space: nowrap;
+}
+
+/* Hide email address when container is too narrow to display it comfortably */
+@media (max-width: 1399px) {
+    /* Hide on screens where email would be cramped against box edges */
+    .contact-item-email .email-address {
+        display: none;
+    }
+}
+
 .dark-mode .contact-item {
     background: var(--bg-card);
     color: var(--text-primary);
